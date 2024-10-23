@@ -68,7 +68,7 @@ function onRemoveFromSpace(event) {
 
 5. link **OAuth consent screen** [here](https://console.cloud.google.com/apis/credentials/consent?)
 
-6. App name : **Helper Bot **
+- App name : **Helper Bot **
 
 ### Task 2.
 
