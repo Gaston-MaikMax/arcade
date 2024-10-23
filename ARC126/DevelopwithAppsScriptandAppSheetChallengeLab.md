@@ -66,86 +66,19 @@ function onRemoveFromSpace(event) {
 
 ```
 
-5. link **OAuth consent screen** [here](https://console.cloud.google.com/apis/credentials/consent?)
+5. Link **OAuth consent screen** [here](https://console.cloud.google.com/apis/credentials/consent?)
 
 6. App name : | Helper Bot |
 
-### Task 2.
+7. Link **Google Chat API Configuration** [here](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat?)
 
-1. training_ecommerce.model
+8. App name : | Helper Bot |
 
-```
-connection: "bigquery_public_data_looker"
+9. Avatar URL : | https://goo.gl/kv2ENA |
 
-# include all the views
-include: "/views/*.view"
-include: "/z_tests/*.lkml"
-include: "/**/*.dashboard"
+10. Description | Helper chat bot |
 
-datagroup: training_ecommerce_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
-}
-
-persist_with: training_ecommerce_default_datagroup
-
-label: "E-Commerce Training"
-
-explore: order_items {
-  join: users {
-    type: left_outer
-    sql_on: ${order_items.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-
-  join: inventory_items {
-    type: left_outer
-    sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
-    relationship: many_to_one
-  }
-
-  join: products {
-    type: left_outer
-    sql_on: ${inventory_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
-
-  join: distribution_centers {
-    type: left_outer
-    sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
-    relationship: many_to_one
-  }
-}
-
-explore: events {
-  join: event_session_facts {
-    type: left_outer
-    sql_on: ${events.session_id} = ${event_session_facts.session_id} ;;
-    relationship: many_to_one
-  }
-  join: event_session_funnel {
-    type: left_outer
-    sql_on: ${events.session_id} = ${event_session_funnel.session_id} ;;
-    relationship: many_to_one
-  }
-  join: users {
-    type: left_outer
-    sql_on: ${events.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-  join: users_region {
-    type: left_outer
-    sql_on: ${events.user_id} = ${users_region.id};;
-    relationship: many_to_one
-  }
-}
-
-```
-
-### Task 3.
-
-1. top 3 event types based on the highest number of users
-2. User Events
+11. Link **Helper Bot** [here](https://mail.google.com/chat/u/0/#chat/home)
 
 ### Kudos 🌟 on completing the lab!
 
