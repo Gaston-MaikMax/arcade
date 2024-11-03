@@ -4,81 +4,289 @@
 
 ### Task 1.
 
-1. ATM Maintenance Tracker
+```
+view: users {
+  sql_table_name: `cloud-training-demos.looker_ecomm.users`
+    ;;
+  drill_fields: [id]
 
-2. link Driver [here](https://drive.google.com/drive/my-drive)
+  dimension: id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}.id ;;
+  }
 
-3. link File [here](https://stdntpartners-my.sharepoint.com/:f:/g/personal/gaston_condori_studentambassadors_com/ErsD25JRd0hCtkb9gjJ9FYkBMBGsf8UVjR9vyP97OqHNZw?e=MD5x6J)
+  dimension: age {
+    type: number
+    sql: ${TABLE}.age ;;
+  }
 
-4. link Apps Script Chat App [here](https://script.google.com/home/projects/create?template=hangoutsChat)
+  dimension: age_tier {
+    type: tier
+    tiers: [18, 25, 35, 45, 55, 65, 75, 90]
+    style: integer
+    sql: ${age} ;;
+  }
+
+  dimension: city {
+    type: string
+    sql: ${TABLE}.city ;;
+  }
+
+  dimension: country {
+    type: string
+    map_layer_name: countries
+    sql: ${TABLE}.country ;;
+  }
+
+  dimension_group: created {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.created_at ;;
+  }
+
+  dimension: email {
+    type: string
+    sql: ${TABLE}.email ;;
+  }
+
+  dimension: first_name {
+    type: string
+    sql: ${TABLE}.first_name ;;
+  }
+
+  dimension: gender {
+    type: string
+    sql: ${TABLE}.gender ;;
+  }
+
+  dimension: last_name {
+    type: string
+    sql: ${TABLE}.last_name ;;
+  }
+
+  dimension: latitude {
+    type: number
+    sql: ${TABLE}.latitude ;;
+  }
+
+  dimension: longitude {
+    type: number
+    sql: ${TABLE}.longitude ;;
+  }
+
+  dimension: state {
+    type: string
+    sql: ${TABLE}.state ;;
+    map_layer_name: us_states
+  }
+
+  dimension: traffic_source {
+    type: string
+    sql: ${TABLE}.traffic_source ;;
+  }
+
+  dimension: is_email_source {
+    type: yesno
+    sql: ${traffic_source} = "Email" ;;
+  }
+
+  dimension: zip {
+    type: zipcode
+    sql: ${TABLE}.zip ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [id, last_name, first_name, events.count, order_items.count]
+  }
+}
 
 ```
-/**
- * Responds to a MESSAGE event in Google Chat.
- *
- * @param {Object} event the event object from Google Chat
- */
-function onMessage(event) {
-  var name = "";
 
-  if (event.space.type == "DM") {
-    name = "You";
-  } else {
-    name = event.user.displayName;
-  }
-  var message = name + " said \"" + event.message.text + "\"";
-
-  return { "text": message };
-}
-
-/**
- * Responds to an ADDED_TO_SPACE event in Google Chat.
- *
- * @param {Object} event the event object from Google Chat
- */
-function onAddToSpace(event) {
-  var message = "";
-
-  if (event.space.singleUserBotDm) {
-    message = "Thank you for adding me to a DM, " + event.user.displayName + "!";
-  } else {
-    message = "Thank you for adding me to " +
-        (event.space.displayName ? event.space.displayName : "this chat");
-  }
-
-  if (event.message) {
-    // Bot added through @mention.
-    message = message + " and you said: \"" + event.message.text + "\"";
-  }
-  console.log('Helper Bot added in ', event.space.name);
-  return { "text": message };
-}
-
-/**
- * Responds to a REMOVED_FROM_SPACE event in Google Chat.
- *
- * @param {Object} event the event object from Google Chat
- */
-function onRemoveFromSpace(event) {
-  console.info("Bot removed from ",
-      (event.space.name ? event.space.name : "this chat"));
-}
+### Task 2.
 
 ```
+view: order_items {
+  sql_table_name: `cloud-training-demos.looker_ecomm.order_items`
+    ;;
+  drill_fields: [order_item_id]
 
-5. Link **OAuth consent screen** [here](https://console.cloud.google.com/apis/credentials/consent?)
+  dimension: order_item_id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}.id ;;
+  }
 
-6. App name : | Helper Bot |
+  dimension_group: created {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.created_at ;;
+  }
 
-7. Link **Google Chat API Configuration** [here](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat?)
+  dimension_group: delivered {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.delivered_at ;;
+  }
 
-8. App name : | Helper Bot |
+  dimension: inventory_item_id {
+    type: number
+    # hidden: yes
+    sql: ${TABLE}.inventory_item_id ;;
+  }
 
-9. Avatar URL : | https://goo.gl/kv2ENA |
+  dimension: order_id {
+    type: number
+    sql: ${TABLE}.order_id ;;
+  }
 
-10. Description | Helper chat bot |
+  dimension_group: returned {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.returned_at ;;
+  }
 
-11. Link **Helper Bot** [here](https://mail.google.com/chat/u/0/#chat/home)
+  dimension: sale_price {
+    type: number
+    sql: ${TABLE}.sale_price ;;
+  }
+
+  dimension_group: shipped {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.shipped_at ;;
+  }
+
+  dimension: shipping_days {
+    type: number
+    sql: DATE_DIFF(${shipped_date}, ${created_date}, DAY);;
+  }
+
+  dimension: status {
+    type: string
+    sql: ${TABLE}.status ;;
+  }
+
+  dimension: user_id {
+    type: number
+    # hidden: yes
+    sql: ${TABLE}.user_id ;;
+  }
+
+
+  measure: average_sale_price {
+    type: average
+    sql: ${sale_price} ;;
+    drill_fields: [detail*]
+    value_format_name: usd_0
+  }
+
+  measure: order_item_count {
+    type: count
+    drill_fields: [detail*]
+  }
+
+  measure: percentage_sales_email_source {
+    type: number
+    value_format_name: percent_2
+    sql: 1.0*${total_sales_email_users}
+      / NULLIF(${total_sales}, 0) ;;
+  }
+
+  measure: total_sales_email_users {
+    type: sum
+    sql: ${sale_price} ;;
+    filters: [users.traffic_source: "Email"]
+  }
+
+  measure: total_sales {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd_0
+  }
+
+  measure: count_distinct_orders {
+    type: count_distinct
+    sql: ${order_id} ;;
+  }
+
+  measure: order_count {
+    type: count_distinct
+    sql: ${order_id} ;;
+  }
+
+  measure: total_revenue {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd
+  }
+
+  measure: total_revenue_from_completed_orders {
+    type: sum
+    sql: ${sale_price} ;;
+    filters: [status: "Complete"]
+    value_format_name: usd
+  }
+
+
+  # ----- Sets of fields for drilling ------
+  set: detail {
+    fields: [
+      order_item_id,
+      users.last_name,
+      users.id,
+      users.first_name,
+      inventory_items.id,
+      inventory_items.product_name
+    ]
+  }
+}
+
+
+```
 
 ### Kudos 🌟 on completing the lab!
 
