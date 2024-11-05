@@ -2,7 +2,7 @@
 
 ### **Solution Video:** [Watch Here]()
 
-### Task 1.
+### Task 1 FILE NAME :- order_items.
 
 ```
 view: order_items {
@@ -178,7 +178,7 @@ view: order_items {
 
 ```
 
-### Task 2.
+### Task 2 FILE NAME :- products.
 
 ```
 view: products {
@@ -261,7 +261,7 @@ view: products {
 
 ```
 
-### Task 3.
+### Task 3 FILE NAME :- users.
 
 ```
 view: users {
@@ -378,7 +378,7 @@ view: users {
 
 ```
 
-### Task 4.
+### Task 4 FILE NAME :- training_ecommerce.
 
 ```
 connection: "bigquery_public_data_looker"
