@@ -6,7 +6,6 @@
 
 ```
 export REGION=
-
 ```
 
 ```
@@ -15,7 +14,6 @@ curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/main/C
 sudo chmod +x gsp073.sh
 
 ./gsp073.sh
-
 ```
 
 ### Kudos 🌟 on completing the lab!
