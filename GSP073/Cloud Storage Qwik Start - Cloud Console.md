@@ -2,7 +2,7 @@
 
 ### **Solution Video:** [Watch Here]()
 
-### [Run the following Commands in CloudShell] ()
+### Run the following Commands in CloudShell
 
 ```
 export REGION=
