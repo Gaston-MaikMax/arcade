@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ```
 
-### Step 2 .
+### Step 2  **model.ipynb** .
 
 ```
 import logging
