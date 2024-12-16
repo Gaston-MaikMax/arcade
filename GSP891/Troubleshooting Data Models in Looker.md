@@ -51,6 +51,8 @@ view: users_limited {
 
 ```
 
+### Step 3 .
+
 ```
 connection: "bigquery_public_data_looker"
 # include all the views
