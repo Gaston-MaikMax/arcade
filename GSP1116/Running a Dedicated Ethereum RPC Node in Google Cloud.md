@@ -2,8 +2,6 @@
 
 ### **Solution Video:** [Watch Here]()
 
-- **Link** [here](https://console.cloud.google.com/vertex-ai/workbench?)
-
 ### Step 1 .
 
 ```
