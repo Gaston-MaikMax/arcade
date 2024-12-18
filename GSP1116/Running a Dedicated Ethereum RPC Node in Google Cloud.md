@@ -198,14 +198,13 @@ sudo journalctl -xe | grep "google_cloud_ops_agent_engine"
 
 ```
 
-### Step 4 .
+### Step 10 .
 
 ```
 exit
-
 ```
 
-### Step 4 .
+### Step 11 .
 
 ```
 curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/refs/heads/main/Running%20a%20Dedicated%20Ethereum%20RPC%20Node%20in%20Google%20Cloud/gsp1116-2.sh
