@@ -17,14 +17,12 @@ sudo chmod +x gsp1116-1.sh
 
 ```
 sudo su ethereum
-
 ```
 
 ### Step 3 .
 
 ```
 bash
-
 ```
 
 ### Step 4 .
@@ -34,7 +32,6 @@ cd ~
 sudo apt update -y
 sudo apt-get update -y
 sudo apt install -y dstat jq
-
 ```
 
 ### Step 5 .
@@ -43,7 +40,6 @@ sudo apt install -y dstat jq
 curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
 sudo bash add-google-cloud-ops-agent-repo.sh --also-install
 rm add-google-cloud-ops-agent-repo.sh
-
 ```
 
 ### Step 6 .
@@ -80,7 +76,6 @@ cd ~
 mkdir ~/.secret
 openssl rand -hex 32 > ~/.secret/jwtsecret
 chmod 440 ~/.secret/jwtsecret
-
 ```
 
 ### Step 7 .
@@ -114,7 +109,6 @@ nohup geth --datadir "/mnt/disks/chaindata-disk/ethereum/geth/chaindata" \
 --txpool.globalqueue 2048 \
 --nat extip:$EXT_IP_ADDRESS \
 &> "/mnt/disks/chaindata-disk/ethereum/geth/logs/geth.log" &
-
 ```
 
 ### Step 8 .
@@ -158,7 +152,6 @@ sudo systemctl stop google-cloud-ops-agent
 sudo systemctl start google-cloud-ops-agent
 
 sudo journalctl -xe | grep "google_cloud_ops_agent_engine"
-
 ```
 
 ### Step 9 .
@@ -193,7 +186,6 @@ sudo systemctl stop google-cloud-ops-agent
 sudo systemctl start google-cloud-ops-agent
 
 sudo journalctl -xe | grep "google_cloud_ops_agent_engine"
-
 ```
 
 ### Step 10 .
