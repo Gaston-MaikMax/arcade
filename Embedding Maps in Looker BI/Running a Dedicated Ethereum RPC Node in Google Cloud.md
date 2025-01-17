@@ -1,4 +1,4 @@
-#🔑 Embedding Maps in Looker BI
+# Embedding Maps in Looker BI
 
 ### **Solution Video:** [Watch Here]()
 
