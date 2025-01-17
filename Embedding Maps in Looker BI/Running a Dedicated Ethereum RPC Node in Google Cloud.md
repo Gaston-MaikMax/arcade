@@ -1,4 +1,4 @@
-# Running a Dedicated Ethereum RPC Node in Google Cloud || GSP1116 ||
+#🔑 Embedding Maps in Looker BI
 
 ### **Solution Video:** [Watch Here]()
 
