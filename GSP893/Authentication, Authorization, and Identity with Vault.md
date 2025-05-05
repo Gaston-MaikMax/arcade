@@ -1,0 +1,75 @@
+# Caching and Datagroups with LookML || [GSP893 ]() ||
+
+### **Solution Video:** [Watch Here]()
+
+### Step 1 **`training_ecommerce.model`**
+
+```lookml
+connection: "bigquery_public_data_looker"
+
+# include all the views
+include: "/views/*.view"
+include: "/z_tests/*.lkml"
+include: "/**/*.dashboard"
+
+datagroup: order_items_datagroup {
+  sql_trigger: SELECT MAX(order_item_id) from order_items ;;
+  max_cache_age: "1 hour"
+}
+
+label: "E-Commerce Training"
+
+explore: order_items {
+  persist_with: order_items_datagroup
+  join: users {
+    type: left_outer
+    sql_on: ${order_items.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+
+  join: inventory_items {
+    type: left_outer
+    sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
+    relationship: many_to_one
+  }
+
+  join: products {
+    type: left_outer
+    sql_on: ${inventory_items.product_id} = ${products.id} ;;
+    relationship: many_to_one
+  }
+
+  join: distribution_centers {
+    type: left_outer
+    sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
+    relationship: many_to_one
+  }
+}
+
+explore: events {
+  join: event_session_facts {
+    type: left_outer
+    sql_on: ${events.session_id} = ${event_session_facts.session_id} ;;
+    relationship: many_to_one
+  }
+  join: event_session_funnel {
+    type: left_outer
+    sql_on: ${events.session_id} = ${event_session_funnel.session_id} ;;
+    relationship: many_to_one
+  }
+  join: users {
+    type: left_outer
+    sql_on: ${events.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+}
+
+```
+
+### Kudos 🌟 on completing the lab!
+
+#### You’ve brilliantly showcased your talent and dedication.
+
+### Keep it up!
+
+### don't forget to follow [here](https://youtube.com/@hellodev1?si=1GE3_P0V8xbViLhc)
