@@ -60,7 +60,7 @@ view: incremental_pdt {
 
 ```
 
-### Step 1 **`Update training_ecommerce.model`**
+### Step 2 **`Update training_ecommerce.model`**
 
 ```lookml
 connection: "bigquery_public_data_looker"
