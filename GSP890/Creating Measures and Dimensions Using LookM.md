@@ -1,10 +1,14 @@
-# Creating Measures and Dimensions Using LookML || GSP890 ||
+<h1 align="center">
+🚀  Creating Measures and Dimensions Using LookML
+ || GSP890       🚀
+</h1>
 
 ### **Solution Video:** [Watch Here]()
 
 ### Task 1.
 
-```
+```lookml
+
 view: users {
   sql_table_name: `cloud-training-demos.looker_ecomm.users`
     ;;
@@ -114,7 +118,7 @@ view: users {
 
 ### Task 2.
 
-```
+```lookml
 view: order_items {
   sql_table_name: `cloud-training-demos.looker_ecomm.order_items`
     ;;
