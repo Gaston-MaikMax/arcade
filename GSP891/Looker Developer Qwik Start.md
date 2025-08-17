@@ -1,20 +1,14 @@
-# Looker Developer: Qwik Start || GSP891 ||
+<h1 align="center">
+🚀  Looker Developer: Qwik Start
+ || GSP891      🚀
+</h1>
 
-### **Solution Video:** [Watch Here]()
+### Step 1 **`users_limited`**
 
-### Step 1 .
+```lookml
 
-```
-users_limited
-
-```
-
-### Step 2 .
-
-```
 view: users_limited {
   sql_table_name: `cloud-training-demos.looker_ecomm.users` ;;
-
   dimension: id {
     primary_key: yes
     type: number
@@ -41,46 +35,42 @@ view: users_limited {
     type: string
     sql: ${TABLE}.last_name ;;
   }
-
   measure: count {
     type: count
     drill_fields: [id, last_name, first_name]
   }
-}
-
-
-```
-
-### Step 3 .
+  }
 
 ```
+
+### Step 2 **`training_ecommerce.model`**
+
+```lookml
+
 connection: "bigquery_public_data_looker"
+
 # include all the views
 include: "/views/*.view"
 include: "/z_tests/*.lkml"
 include: "/**/*.dashboard"
+
 datagroup: training_ecommerce_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
+
 persist_with: training_ecommerce_default_datagroup
+
 label: "E-Commerce Training"
+
 explore: order_items {
-
-  query: techcps {
-    dimensions: [users.age, users.average_sales, users.country, users.id, users.state]
-  }
-  join: user_order_lifetime {
-    type: left_outer
-    sql_on: ${order_items.user_id} = ${user_order_lifetime.user_id} ;;
-    relationship: many_to_one
-  }
-
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+
+
 
   join: inventory_items {
     type: left_outer
@@ -100,6 +90,7 @@ explore: order_items {
     relationship: many_to_one
   }
 }
+
 explore: events {
   join: event_session_facts {
     type: left_outer
@@ -111,24 +102,18 @@ explore: events {
     sql_on: ${events.session_id} = ${event_session_funnel.session_id} ;;
     relationship: many_to_one
   }
-  join: order_items {
-    type: left_outer
-    sql_on: ${events.user_id} = ${order_items.user_id} ;;
-    relationship: many_to_one
-  }
   join: users {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
-
-  join: user_order_lifetime {
+  join: users_limited {
     type: left_outer
-    sql_on: ${order_items.user_id} = ${user_order_lifetime.user_id} ;;
+    sql_on: ${events.user_id} = ${users_limited.id};;
     relationship: many_to_one
   }
-
 }
+
 
 ```
 
