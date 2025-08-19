@@ -1,6 +1,6 @@
 <h1 align="center">
-🚀  Creating Measures and Dimensions Using LookML
- || GSP890       🚀
+🚀  Build LookML Objects in Looker: Challenge Lab
+ || GSP361       🚀
 </h1>
 
 ### **Solution Video:** [Watch Here]()
