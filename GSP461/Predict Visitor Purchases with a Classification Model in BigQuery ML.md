@@ -1,6 +1,6 @@
 <h1 align="center">
-🚀  Predict Visitor Purchases with a Classification Model in BigQuery ML
- || GSP229       🚀
+🚀  Bracketology with Google Machine Learning
+ || GSP461        🚀
 </h1>
 
 ### **Solution Video:** [Watch Here]()
