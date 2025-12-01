@@ -1,6 +1,6 @@
 <h1 align="center">
-🚀  gcloud for Network Configuration
- || GSP694       🚀
+🚀 Manage Kubernetes in Google Cloud: Challenge Lab
+ || GSP510       🚀
 </h1>
 
 ### **Solution Video:** [Watch Here]()
