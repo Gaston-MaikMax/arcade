@@ -9,9 +9,9 @@
 
 ```lookml
 
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/VPC%20Networks%20Controlling%20Access/techcps213.sh
-sudo chmod +x techcps213.sh
-./techcps213.sh
+curl -LO https://raw.githubusercontent.com/Itsabhishek7py/GoogleCloudSkillsboost/refs/heads/main/VPC%20Networks%20-%20Controlling%20Access/abhishek.sh
+sudo chmod +x abhishek.sh
+./abhishek.sh
 
 ```
 
