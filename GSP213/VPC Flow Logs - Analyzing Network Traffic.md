@@ -1,6 +1,6 @@
 <h1 align="center">
-🚀  VPC Flow Logs - Analyzing Network Traffic
- || GSP212       🚀
+🚀  VPC Networks - Controlling Access
+ || GSP213       🚀
 </h1>
 
 ### **Solution Video:** [Watch Here]()
