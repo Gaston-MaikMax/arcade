@@ -23,12 +23,6 @@ sudo chmod +x TechCode.sh
 
 ```
 
-### Task 2
-
-## Enumerated field named Sensitive Data Type that contains three values: Location info, Contact info, and None.
-
-## Dataplex Universal Catalog customer_online_session
-
 ### Kudos 🌟 on completing the lab!
 
 #### You’ve brilliantly showcased your talent and dedication.
