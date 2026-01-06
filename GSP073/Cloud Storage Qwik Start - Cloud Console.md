@@ -9,11 +9,9 @@ export REGION=
 ```
 
 ```
-curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/main/Cloud%20Storage%20Qwik%20Start%20-%20Cloud%20Console/gsp073.sh
-
-sudo chmod +x gsp073.sh
-
-./gsp073.sh
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Cloud%20Storage%3A%20Qwik%20Start%20-%20Cloud%20Console/TechCode.sh
+sudo chmod +x TechCode.sh
+./TechCode.sh
 ```
 
 ### Kudos 🌟 on completing the lab!
