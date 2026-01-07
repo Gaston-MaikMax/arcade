@@ -1,0 +1,26 @@
+<h1 align="center">
+🚀  Creating and Alerting on Logs-based Metrics
+ || GSP091      🚀
+</h1>
+
+### **Solution Video:** [Watch Here]()
+
+<div style="padding: 15px; margin: 10px 0;">
+
+### Task 1
+
+```lookml
+
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Creating%20and%20Alerting%20on%20Logs-based%20Metrics/TechCode.sh
+sudo chmod +x TechCode.sh
+./TechCode.sh
+
+```
+
+### Kudos 🌟 on completing the lab!
+
+#### You’ve brilliantly showcased your talent and dedication.
+
+### Keep it up!
+
+### don't forget to follow [here](https://youtube.com/@hellodev1?si=1GE3_P0V8xbViLhc)
