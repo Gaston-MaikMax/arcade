@@ -13,9 +13,10 @@ curl -LO https://raw.githubusercontent.com/Itsabhishek7py/GoogleCloudSkillsboost
 sudo chmod +x abhishek.sh
 ./abhishek.sh
 
+
 ```
 
-### Kudos 🌟 on completing the lab!
+### Kudos 🌟 on completing the lab!a
 
 #### You’ve brilliantly showcased your talent and dedication.
 
