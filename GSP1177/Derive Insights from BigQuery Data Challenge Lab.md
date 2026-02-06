@@ -1,6 +1,6 @@
 <h1 align="center">
-🚀  Using Specialized Processors with Document AI (Python)
- || GSP1140       🚀
+🚀  Scaling Microservices Applications: Migration to Redis Enterprise on Google Cloud
+ || GSP1177       🚀
 </h1>
 
 ### **Solution Video:** [Watch Here]()
@@ -9,12 +9,9 @@
 
 ```lookml
 
-
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Using%20Specialized%20Processors%20with%20Document%20AI/TechCode.sh
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Monitor%20E-sports%20Chat%20with%20Streamlit/TechCode.sh
 sudo chmod +x TechCode.sh
 ./TechCode.sh
-
-
 
 ```
 
